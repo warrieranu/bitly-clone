@@ -1,2 +1,80 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="../css/application.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+        <title>WOOF</title>
+    </head>
+    <body>
+          <body id="page-top">
+        	<header class="masthead">
+        	<div class="container">
+        	<nav class="navbar navbar fixed-top navbar-light bg-light">
+          <a class="navbar-brand" href="index.html">Woof-ly</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+          <a class="nav-link" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+          </li>
+    </ul>
+  </div>
+</nav>
+</div>
+          <div class="header-content">
+          <div class="header-content-inner">
+          <h1 id="homeHeading">Are you ready to Woof-up your URLs?</h1>
+          <hr>
+          <p>Type in your catty URL to make it more doggo-friendly.</p>
+          <div class="form-group">
+          <form action ="/url_changer" method="POST" class="form-horizontal">
+              <label for="long_url">Long URL:</label>
+              <input type="text" name="long_url">
+              <input type="submit" value="Submit to Woof-er" class="btn btn-primary btn-xl js-scroll-trigger">
+          </div>
+          
+        </form>
+        </div>
+        <div class="container-results">
+        <% if @p%>
+          <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Catty Long URL</th>
+              <th>Doggo Woof-ed URL</th>
+              <th>Click counts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @p.id %></td>
+              <td><a href = "<%= @p.long_url %>"><%= @p.long_url %></a></td>
+              <td><a href = "<%= @p.short_url %>"><%= @p.short_url %></a></td>
+              <td>click co 1</td>
+            </tr>
+          </tbody>
+        </table>
+        <%= @p.short_url %>
+        <% end%>
+        </div>
+      </div>
+    </header>
+    <!-- Latest compiled and minified JavaScript -->
+	<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+   
+    </body>
+    
+</html>

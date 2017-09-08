@@ -13,6 +13,7 @@ class Url < ActiveRecord::Base
     
     # after_initialize :add_to_table
     
+    
     def shorten
         return "woof-" + SecureRandom.urlsafe_base64(5)
     end

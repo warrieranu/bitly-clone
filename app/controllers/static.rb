@@ -23,5 +23,5 @@ get '/:short_url' do
     @p=Url.find_by(short_url: params[:short_url])
     @p.increment_click_count
     @p.save
-    redirect to "#{@p.long_url}"
+    redirect to "http://#{@p.long_url}"
 end
